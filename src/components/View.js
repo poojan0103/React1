@@ -21,6 +21,11 @@ export const View = () => {
             })
             .catch((err) => { });
     };
+    var name ="";
+    useEffect(() => {
+     // getAllTutorials();
+      name = localStorage.getItem("name");
+    }, []);
  
     const [title, setTitle] = useState([]);
 

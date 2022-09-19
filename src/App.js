@@ -23,6 +23,9 @@ import { Add } from './components/Add';
 import { View } from './components/View';
 import { GetStoreData } from './components/Storage/GetStoreData';
 import { StorageDemo } from './components/Storage/StorageDemo';
+import { Json } from './context/Json';
+import { Sidebar, SideBar } from './Sidebar';
+import ProtectedRoutes from './ProtectedRoute';
 
 function App() {
   
@@ -44,9 +47,12 @@ function App() {
       <Footer address = {address}/>*/}
       {/*<UserApiDemo/>
       <RecipeAPi/>*/}
-      <Navbar/>
+      {/*<Navbar/>*/}
       {/*<Add/>
-      <View/>*/}
+      <View/>
+    <Json/>*/}
+    <SideBar/>
+   
      
       
       
@@ -59,10 +65,13 @@ function App() {
         <Route path='/subblog' element={<SubBlog/>}></Route>
         <Route path='/products' element={<Products/>}></Route>
         <Route path='/productdetails' element={<ProductDetail/>}></Route>
+        <Route element={<ProtectedRoutes/>}>
         <Route path='/add' element={<Add/>}></Route>
         <Route path='/view' element={<View/>}></Route>
-        <Route path='/storagedemo' element={<StorageDemo/>}></Route>
-        <Route path='/getstoredata' element={<GetStoreData/>}></Route>
+        </Route>
+        <Route path='/login' element={<StorageDemo/>}></Route>
+        
+       
        
        
         
