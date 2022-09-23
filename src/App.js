@@ -26,6 +26,7 @@ import { StorageDemo } from './components/Storage/StorageDemo';
 import { Json } from './context/Json';
 import { Sidebar, SideBar } from './Sidebar';
 import ProtectedRoutes from './ProtectedRoute';
+import { MaterialDemo1 } from './material/MaterialDemo1';
 
 function App() {
   
@@ -52,6 +53,7 @@ function App() {
       <View/>
     <Json/>*/}
     <SideBar/>
+    <MaterialDemo1/>
    
      
       
@@ -70,14 +72,7 @@ function App() {
         <Route path='/view' element={<View/>}></Route>
         </Route>
         <Route path='/login' element={<StorageDemo/>}></Route>
-        
-       
-       
-       
-        
-        
-         
-         </Routes>
+        </Routes>
       
 
     </div>

@@ -16,7 +16,7 @@ export const SideBar = () => {
       <a className="menu-item" href="/add">
         Add
       </a>
-
+    
       <a className="menu-item" href="/view">
         View
       </a>
