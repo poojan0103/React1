@@ -27,6 +27,12 @@ import { Json } from './context/Json';
 import { Sidebar, SideBar } from './Sidebar';
 import ProtectedRoutes from './ProtectedRoute';
 import { MaterialDemo1 } from './material/MaterialDemo1';
+import { UserComponent } from './query/UserComponent';
+import { Employees } from './contex1/Employee';
+import { AddCountry } from './context/AddCountry';
+import { MuiTable1 } from './material/MuiTabel';
+import { Update } from './components/Update';
+
 
 function App() {
   
@@ -48,19 +54,23 @@ function App() {
       <Footer address = {address}/>*/}
       {/*<UserApiDemo/>
       <RecipeAPi/>*/}
-      {/*<Navbar/>*/}
-      {/*<Add/>
-      <View/>
-    <Json/>*/}
-    <SideBar/>
+      <Navbar/>
+     {/* <Add/>
+      <View/>*/}
+    
+    {/*<SideBar/>
     <MaterialDemo1/>
-   
+    <UserComponent/>
+  */}
+  {/*<Employees/>*/}
+  {/*<MuiTable1/>*/}
+  
      
       
       
       
       <Routes>
-        <Route path='/aboutus' element={<AboutUs/>}></Route>
+        {/*<Route path='/aboutus' element={<AboutUs/>}></Route>
         <Route path='/contactus' element={<ContactUs/>}></Route>
         <Route path='/blog' element={<Blog/>}></Route>
         <Route path='/contactdetails' element={<ContactDeatils/>}></Route>
@@ -68,10 +78,14 @@ function App() {
         <Route path='/products' element={<Products/>}></Route>
         <Route path='/productdetails' element={<ProductDetail/>}></Route>
         <Route element={<ProtectedRoutes/>}>
+        </Route>
+<Route path='/login' element={<StorageDemo/>}></Route>*/}
         <Route path='/add' element={<Add/>}></Route>
         <Route path='/view' element={<View/>}></Route>
+        <Route path='/update/:id'
+        element = {<Update/>}>
+
         </Route>
-        <Route path='/login' element={<StorageDemo/>}></Route>
         </Routes>
       
 

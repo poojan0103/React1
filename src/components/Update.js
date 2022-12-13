@@ -1,29 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import axios from 'axios';
+import axios from "axios";
 
-export const Add = () => {
 
+export const Update = () => {
+const navigate = useNavigate();
+  var id = useParams().id
   var {
     register,
     handleSubmit,
     formState: { errors }
   } = useForm();
-  
-  const submit = async (data) => {
-    console.log(data);
-    await axios.post("http://localhost:3000/product/add", data).then(res => {
-      if (res.status === 200) {
-        alert("Product Added Successfully")
+  const [Product, setproduct] = useState({});
+  const updateproduct = async (data) => {
+    await axios
+      .put("http://localhost:3000/product/update/" + id, data)
+      .then((res) => {
+        if (res.status === 200) {
+          alert("Product Update Successfully")
+        
       }
-    }).catch(err => {
-      console.log(err);
-    })
-  }
 
-
+{/*        
+      */}
+        console.log(res.data.data)
+      });
+  };
+  const submit = (data) => {
+    setTimeout(() => {
+          navigate("/view");
+        }, 100);
+    console.log(data);
+    var obj = {
+      name: data.name,
+      price: data.price,
+      qunti: data.qunti
+    };
+    updateproduct(obj);
+  };
   return (
     <div>
+      <h1>Update Product</h1>
       <form onSubmit={handleSubmit(submit)}>
         <div class="form-group">
           <label for="exampleInputEmail1">Name</label>
@@ -48,7 +66,7 @@ export const Add = () => {
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">qunti
- </label>
+          </label>
           <input
             type="integer"
             class="form-control"
@@ -56,11 +74,7 @@ export const Add = () => {
             {...register("qunti")}
           />
         </div>
-
-
-      
-
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-primary" >
           Submit
         </button>
       </form>
